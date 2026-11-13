@@ -63,7 +63,33 @@ terminalForm.addEventListener("submit", function (event) {
         return;
     }
 
-    printOutput("$ " + command, "command-line");
+
+    const commandLine = document.createElement("p");
+    commandLine.className = "command-line";
+
+    const promptUser = document.createElement("span");
+    promptUser.className = "prompt-user";
+    promptUser.textContent = "visitor@portfolio";
+
+    const promptPath = document.createElement("span");
+    promptPath.className = "prompt-path";
+    promptPath.textContent = "~";
+
+    const commandText = document.createElement("span");
+    commandText.textContent = " $ " + command;
+
+    commandLine.append(
+        promptUser,
+        document.createTextNode(":"),
+        promptPath,
+        commandText
+    );
+
+    terminalOutput.appendChild(commandLine);
+
+    // Keep the newest command visible
+    terminalOutput.scrollTop = terminalOutput.scrollHeight;
+
 
     if (command === "clear") {
         terminalOutput.replaceChildren();

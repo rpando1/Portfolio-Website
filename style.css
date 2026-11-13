@@ -560,3 +560,49 @@ footer {
         font-size: 12px;
     }
 }
+
+/* ========================================
+   BASH-STYLE TERMINAL PROMPT
+======================================== */
+
+.terminal-prompt {
+    display: inline-flex;
+    align-items: center;
+    gap: 0;
+    flex-shrink: 0;
+
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    white-space: nowrap;
+    cursor: text;
+}
+
+.prompt-user {
+    color: #00f5a0;
+    font-weight: bold;
+}
+
+.prompt-path {
+    color: #6caaff;
+    font-weight: bold;
+}
+
+.terminal-prompt > span:last-child {
+    color: #e3e9e6;
+    margin-right: 6px;
+}
+
+.command-line {
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    color: #e3e9e6;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 600px) {
+    .terminal-prompt,
+    .command-line {
+        font-size: 11px;
+    }
+}
