@@ -35,6 +35,8 @@ function printOutput(text, className = "output") {
     line.textContent = text;
 
     terminalOutput.appendChild(line);
+
+    terminalOutput.scrollTop = terminalOutput.scrollHeight;
 }
 
 terminalForm.addEventListener("submit", function (event) {
