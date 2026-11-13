@@ -478,3 +478,56 @@ footer {
         transition: none;
     }
 }
+
+
+/* ========================================
+   INTERACTIVE TERMINAL
+======================================== */
+
+#terminal-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+#terminal-input {
+    flex: 1;
+    min-width: 0;
+    background: transparent;
+    border: none;
+    outline: none;
+
+    color: var(--accent);
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    caret-color: var(--accent);
+}
+
+#terminal-input::placeholder {
+    color: #56736b;
+}
+
+#terminal-input:focus-visible {
+    box-shadow: 0 2px 0 var(--accent);
+}
+
+#terminal-output {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+#terminal-output p {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.command-line {
+    color: var(--accent);
+}
+
+@media (max-width: 600px) {
+    #terminal-input {
+        font-size: 12px;
+    }
+}
