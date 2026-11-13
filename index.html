@@ -63,47 +63,25 @@
             </div>
 
             <!-- Terminal Window -->
-            <div class="terminal">
+            < <div class="terminal-body" id="terminal">
 
-                <div class="terminal-header">
-                    <div class="terminal-dots">
-                        <span class="dot red"></span>
-                        <span class="dot yellow"></span>
-                        <span class="dot green"></span>
-                    </div>
-
-                    <span>portfolio@ubuntu:~</span>
-                </div>
-
-                <div class="terminal-body">
-                    <p>
-                        <span class="prompt">$</span>
-                        whoami
-                    </p>
-
+                <div id="terminal-output">
                     <p class="output">
-                        IT Enthusiast | Homelab Builder
-                    </p>
-
-                    <p>
-                        <span class="prompt">$</span>
-                        ls projects/
-                    </p>
-
-                    <p class="output">
-                        ubuntu-server/
-                        casaos-monitor/
-                        powershell/
-                        automation/
-                    </p>
-
-                    <p>
-                        <span class="prompt">$</span>
-                        <span class="cursor">_</span>
+                        Welcome to my IT Portfolio!
+                        Type 'help' to see available commands.
                     </p>
                 </div>
 
-            </div>
+                <form id="terminal-form" autocomplete="off">
+                    <label for="terminal-input" class="prompt">
+                        $
+                    </label>
+
+                    <input type="text" id="terminal-input" aria-label="Terminal command"
+                        placeholder="Enter a command..." spellcheck="false" autocapitalize="off">
+                </form>
+
+                </div>
 
         </section>
 

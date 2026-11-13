@@ -1,0 +1,65 @@
+
+const terminalForm = document.getElementById("terminal-form");
+const terminalInput = document.getElementById("terminal-input");
+const terminalOutput = document.getElementById("terminal-output");
+
+const commands = {
+    help: `Available commands:
+help       - Show available commands
+whoami     - About me
+skills     - Technical skills
+projects   - List my projects
+date       - Display the current date
+clear      - Clear the terminal`,
+
+    whoami: `IT Enthusiast
+Linux | Networking | Cybersecurity
+Homelab Builder & Automation Enthusiast`,
+
+    skills: `Linux Administration
+Windows Administration
+Networking & Security
+PowerShell & Bash
+Docker & Git
+Cloud Computing`,
+
+    projects: `ubuntu-server/
+casaos-monitor/
+powershell-automation/
+github-backups/`
+};
+
+function printOutput(text, className = "output") {
+    const line = document.createElement("p");
+    line.className = className;
+    line.textContent = text;
+
+    terminalOutput.appendChild(line);
+}
+
+terminalForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const command = terminalInput.value.trim().toLowerCase();
+
+    if (!command) {
+        return;
+    }
+
+    printOutput("$ " + command, "command-line");
+
+    if (command === "clear") {
+        terminalOutput.replaceChildren();
+    } else if (command === "date") {
+        printOutput(new Date().toLocaleString());
+    } else if (Object.hasOwn(commands, command)) {
+        printOutput(commands[command]);
+    } else {
+        printOutput(
+            "Command not found: " + command +
+            ". Type 'help' for available commands."
+        );
+    }
+
+    terminalInput.value = "";
+});
