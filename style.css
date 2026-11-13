@@ -512,10 +512,39 @@ footer {
     box-shadow: 0 2px 0 var(--accent);
 }
 
+
+/* ========================================
+   TERMINAL SCROLLBAR
+======================================== */
+
 #terminal-output {
     max-height: 300px;
     overflow-y: auto;
+
+    /* Firefox */
+    scrollbar-width: thin;
+    scrollbar-color: #176b55 #0b141b;
 }
+
+/* Chrome, Chromium, Edge and Safari */
+#terminal-output::-webkit-scrollbar {
+    width: 6px;
+}
+
+#terminal-output::-webkit-scrollbar-track {
+    background: #0b141b;
+    border-radius: 10px;
+}
+
+#terminal-output::-webkit-scrollbar-thumb {
+    background: #176b55;
+    border-radius: 10px;
+}
+
+#terminal-output::-webkit-scrollbar-thumb:hover {
+    background: #00f5a0;
+}
+
 
 #terminal-output p {
     white-space: pre-wrap;

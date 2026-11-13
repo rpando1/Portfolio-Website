@@ -1,7 +1,22 @@
 
 const terminalForm = document.getElementById("terminal-form");
 const terminalInput = document.getElementById("terminal-input");
-const terminalOutput = document.getElementById("terminal-output");
+const terminalOutput = document.getElementById("terminal-output")
+
+
+const terminal = document.getElementById("terminal");
+
+// Focus the input when clicking inside the terminal
+terminal.addEventListener("click", function (event) {
+    // Allow users to select text without interrupting
+    // their selection
+    if (window.getSelection().toString().length > 0) {
+        return;
+    }
+
+    terminalInput.focus();
+});
+
 
 const commands = {
     help: `Available commands:
